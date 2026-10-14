@@ -22,7 +22,7 @@ Native dialog + vòng Tab tường minh, khôi phục focus, thông báo aria-li
 
 ## Giai đoạn 5 — bàn giao
 
-README, các tài liệu học và lịch sử Git nhỏ theo chức năng. GitHub Pages chưa xuất bản do đăng nhập không hợp lệ; cung cấp các bước tự triển khai. Không thay đổi cấu hình triển khai của repository cha.
+README, các tài liệu học và lịch sử Git nhỏ theo chức năng. Repository riêng đã tạo và đẩy lên GitHub; GitHub Pages được bật từ nhánh main. Lỗi đăng nhập ban đầu do môi trường sandbox, kiểm tra lại ngoài sandbox thành công. Không thay đổi cấu hình triển khai của repository cha. Xem TEST-REPORT để biết kết quả URL công khai.
 
 ## Cấu trúc
 

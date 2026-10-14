@@ -7,7 +7,7 @@ const output=path.resolve(__dirname,'../test-results');fs.mkdirSync(output,{recu
  const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();
  const errors=[];page.on('pageerror',e=>errors.push(e.message));const results=[];
  async function check(name,fn){try{await fn();results.push({name,status:'PASS'});}catch(e){results.push({name,status:'FAIL',error:e.message});throw e;}finally{fs.writeFileSync(path.join(output,'browser-results.json'),JSON.stringify({results,errors},null,2));}}
- const url='http://127.0.0.1:4173/';const cards=page.locator('.card');
+ const url=process.env.BASE_URL || 'http://127.0.0.1:4173/';const cards=page.locator('.card');
  try {
  await check('Initial load and 18 cards',async()=>{await page.goto(url);await page.waitForFunction(()=>document.querySelectorAll('.card').length===18);assert.equal(await cards.count(),18);});
  await page.screenshot({path:path.join(output,'desktop.png'),fullPage:true});
@@ -26,4 +26,5 @@ const output=path.resolve(__dirname,'../test-results');fs.mkdirSync(output,{recu
  await check('No runtime errors',async()=>assert.deepEqual(errors,[]));
  } finally {await browser.close();console.log(JSON.stringify({results,errors},null,2));}
 })().catch(error=>{console.error(error);process.exitCode=1;});
+
 

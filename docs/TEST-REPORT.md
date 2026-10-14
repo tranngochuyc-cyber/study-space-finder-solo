@@ -1,6 +1,6 @@
 # Báo cáo kiểm thử
 
-Ngày 14/10/2026. Node v24.19.0; Playwright điều khiển Microsoft Edge headless trên Windows. Website được phục vụ HTTP local. Không suy diễn kết quả sang Safari, Firefox hoặc điện thoại thật.
+Ngày 14/10/2026. Node v24.19.0; Playwright điều khiển Microsoft Edge headless trên Windows. Đã kiểm tra cả HTTP local và [URL GitHub Pages thực tế](https://tranngochuyc-cyber.github.io/study-space-finder-solo/). Cả hai lượt đều đạt 14/14 nhóm browser, không pageerror. Không suy diễn kết quả sang Safari, Firefox hoặc điện thoại thật.
 
 ## Unit — 8/8 PASS
 
@@ -42,7 +42,7 @@ Chạy thực tế: `node tests/browser.cjs` với PLAYWRIGHT_MODULE trỏ modul
 
 - `node --check` cho 4 module chính: PASS.
 - Đã mở ảnh desktop và mobile/modal để xem phân cấp và chữ tiếng Việt. Tên “An Nhiên Reading Café”, đoạn mô tả và nhãn giá/giờ hiển thị dấu đúng trong ảnh modal 360px.
-- Ảnh SVG tự tạo, không request ảnh/font bên thứ ba. Các đường dẫn HTML không bắt đầu bằng `/`; URL JSON dựa trên import.meta.url. Chưa xác nhận trên URL GitHub Pages thực tế.
+- Ảnh SVG tự tạo, không request ảnh/font bên thứ ba. Các đường dẫn HTML không bắt đầu bằng `/`; URL JSON dựa trên import.meta.url. Đã xác nhận hoạt động ở subpath `/study-space-finder-solo/` trên GitHub Pages bằng cùng bộ kiểm thử browser.
 - Tiêu đề hero, khám phá và yêu thích có nội dung phù hợp; không có trang đặt chỗ giả.
 
 ## Chưa thực hiện
@@ -54,7 +54,6 @@ Chạy thực tế: `node tests/browser.cjs` với PLAYWRIGHT_MODULE trỏ modul
 | Audit toàn bộ WCAG 2.2 AA | NOT RUN | Các kiểm thử bàn phím/nhãn không thay thế audit |
 | Screen reader NVDA/VoiceOver | NOT RUN | Chưa thử bằng công cụ hỗ trợ thực tế |
 | Safari, Firefox, thiết bị thật | NOT RUN | Chỉ Edge headless |
-| GitHub Pages URL public | NOT RUN | GitHub CLI đăng nhập không hợp lệ, chưa publish |
 | Nghiên cứu usability với sinh viên | NOT RUN | Chưa có người tham gia; không tự tạo số liệu |
 
-Các lần test thất bại ban đầu được giữ trong ERROR-LOG. PASS phản ánh lần chạy sau khi sửa, không che giấu lỗi ban đầu.
+GitHub Pages public: **PASS**, đã truy cập thực tế và chạy đủ 14 nhóm kiểm thử sau triển khai. Các lần test thất bại ban đầu được giữ trong ERROR-LOG. PASS phản ánh lần chạy sau khi sửa, không che giấu lỗi ban đầu.

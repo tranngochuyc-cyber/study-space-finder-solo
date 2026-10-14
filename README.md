@@ -42,9 +42,9 @@ Kiểm thử trình duyệt tùy chọn cần Playwright và Microsoft Edge. M�
 
 ## Git/GitHub Pages
 
-Dự án này có Git repository riêng bên trong thư mục mới; không dùng remote của website Indieverse bên ngoài. Chưa push, chưa deploy vì GitHub CLI hiện không xác thực được. Không có URL public đã kiểm chứng.
+Dự án có Git repository riêng, không dùng remote của website Indieverse bên ngoài. Source: [GitHub](https://github.com/tranngochuyc-cyber/study-space-finder-solo). GitHub Pages: [Study Space Finder](https://tranngochuyc-cyber.github.io/study-space-finder-solo/). Xem TEST-REPORT để biết kiểm thử URL công khai.
 
-Các lệnh sau **là hướng dẫn, chưa chạy**. Thay tên và email bằng thông tin của bạn:
+Các lệnh sau là hướng dẫn cho một bản sao dự án. Thay tên và email bằng thông tin của bạn. Repository hiện tại đã được tạo bằng lệnh gh repo create; không cần tạo lại:
 
 ```powershell
 git config user.name "Tên của bạn"

@@ -3,7 +3,7 @@
 | Lỗi đã gặp | Nguyên nhân | Xử lý | Cách phát hiện lại |
 |---|---|---|---|
 | Git cha báo dubious ownership | Owner thư mục khác user của phiên | Dùng `git -c safe.directory=...` riêng cho lệnh đọc trạng thái; không sửa global | git status ở root |
-| GitHub CLI báo token invalid | Phiên đăng nhập hiện không hợp lệ | Chưa push/deploy; hướng dẫn người dùng gh auth login, không đọc auth file | gh auth status |
+| GitHub CLI trong sandbox báo token invalid | Môi trường hạn chế làm kiểm tra đăng nhập thất bại; kiểm tra lại ngoài sandbox xác nhận đăng nhập hợp lệ | Chạy lại gh auth status với quyền được duyệt, sau đó tạo repo/push/bật Pages; không cần đăng nhập lại, không đọc auth file | gh auth status ngoài sandbox |
 | Commit đầu báo Author identity unknown | Repository mới chưa có user.name/email | Dùng danh tính tác giả đã có trong commit mới nhất của repo cha với `git -c` chỉ áp dụng từng lệnh; không cấu hình global | git commit |
 | HTTP local bị socket access forbidden; Edge crash khi launch | Sandbox hạn chế socket/tiến trình/profile trình duyệt | Xin quyền thực thi và chạy server/Edge ngoài sandbox | Invoke-WebRequest và browser tests |
 | EADDRINUSE khi chạy server lần hai | Server sandbox cũ vẫn giữ cổng 4173 | Dừng đúng session server cũ bằng Ctrl+C rồi mở lại | Output node scripts/serve.cjs |
