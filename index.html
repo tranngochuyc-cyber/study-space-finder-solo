@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tìm góc học tập phù hợp tại TP.HCM. Dự án cá nhân với dữ liệu minh họa.">
+  <meta name="theme-color" content="#174e43"><title>Study Space Finder — Tìm một góc, mở ý tưởng</title>
+  <link rel="icon" href="assets/images/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/base.css"><link rel="stylesheet" href="assets/css/components.css">
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#results">Đến danh sách địa điểm</a>
+  <header class="header wrap">
+    <a class="brand" href="#explore" aria-label="Study Space Finder, khám phá"><span class="brand-icon" aria-hidden="true">s.</span><span>studyspace<span class="brand-sub">FIND YOUR FOCUS</span></span></a>
+    <nav aria-label="Điều hướng chính"><a href="#explore" id="explore-link" aria-current="page">Khám phá</a><a href="#favorites" id="favorites-link">Đã lưu <span id="saved-count">0</span></a></nav>
+    <span class="edition">SOLO PROJECT <span>01</span></span>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> GÓC NHỎ CHO NHỮNG Ý TƯỞNG LỚN</p><h1 id="hero-title">Một góc học tốt.<br>Một ngày <em>thật có hứng.</em></h1><p class="hero-description">Quán cà phê, thư viện hay không gian làm việc?<br>Tìm nơi hợp với cách bạn học, ngay tại Sài Gòn.</p><a class="hero-link" href="#results">Tìm góc của bạn <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-art"><img src="assets/images/study-room.svg" width="640" height="440" alt="Minh họa góc học có bàn gỗ, sách và cây xanh bên cửa sổ"><div class="art-note"><span aria-hidden="true">✳</span> Ít xao nhãng.<br><strong>Nhiều cảm hứng hơn.</strong></div><span class="art-label">A LITTLE SPACE TO THINK.</span></div>
+    </section>
+    <section class="search-area wrap" aria-label="Tìm kiếm địa điểm"><div class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><div><label for="query">Hôm nay bạn muốn học ở đâu?</label><input id="query" type="search" placeholder="Tên địa điểm, địa chỉ hoặc khu vực…" autocomplete="off"></div><span class="city">TP. Hồ Chí Minh</span><button id="search-button" class="primary">Tìm không gian <span aria-hidden="true">↗</span></button></div><p class="demo-note"><span aria-hidden="true">ⓘ</span> Phiên bản học tập · 18 địa điểm hư cấu, thông tin và hình ảnh chỉ để minh họa.</p></section>
+    <section class="discovery wrap" id="results" tabindex="-1" aria-labelledby="results-title">
+      <div class="section-heading"><div><p class="eyebrow">YOUR NEXT STUDY SPOT</p><h2 id="results-title">Không gian dành cho bạn</h2></div><p>Một mình tập trung, cùng nhau tiến bộ.</p></div>
+      <div class="category-tabs" role="group" aria-label="Loại không gian"><button data-type="" aria-pressed="true">⊞ <span>Tất cả không gian</span></button><button data-type="cafe" aria-pressed="false">♧ <span>Cà phê</span></button><button data-type="library" aria-pressed="false">▤ <span>Thư viện</span></button><button data-type="coworking" aria-pressed="false">⌘ <span>Coworking</span></button></div>
+      <div class="discovery-layout">
+        <aside class="filters" aria-label="Bộ lọc địa điểm"><div class="filter-heading"><h3>Bộ lọc</h3><button class="text-button" id="clear">Đặt lại</button></div><form id="filters-form">
+          <label class="field">Khu vực<select id="district"><option value="">Tất cả khu vực</option></select></label>
+          <label class="field">Ngân sách tham khảo<select id="price"><option value="">Mọi mức giá</option><option value="free">Miễn phí</option><option value="low">Đến 50.000đ</option><option value="mid">50.001–100.000đ</option><option value="high">Trên 100.000đ</option></select></label>
+          <label class="field">Độ yên tĩnh<select id="quiet"><option value="">Tất cả mức độ</option><option value="3">Rất yên tĩnh</option><option value="2">Vừa phải</option><option value="1">Sôi nổi</option></select></label>
+          <fieldset><legend>Tiện ích cần có</legend><label><input type="checkbox" name="amenity" value="wifi"> Wi-Fi</label><label><input type="checkbox" name="amenity" value="outlets"> Ổ điện</label><label><input type="checkbox" name="amenity" value="ac"> Điều hòa</label><label><input type="checkbox" name="amenity" value="parking"> Chỗ gửi xe</label></fieldset>
+          <div class="saved-filter"><label><input id="saved-only" type="checkbox"> Chỉ xem đã lưu</label></div>
+        </form><div class="filter-note"><span aria-hidden="true">✳</span><p>Góc học phù hợp<br>là nơi bạn thấy thoải mái.</p><small>Chọn điều quan trọng với bạn.</small></div></aside>
+        <div class="results-panel"><div class="results-toolbar"><p id="result-count" role="status" aria-live="polite">Đang tải địa điểm…</p><label class="sort-label">Sắp xếp<select id="sort"><option value="name">Tên A–Z</option><option value="price-asc">Giá tăng dần</option><option value="price-desc">Giá giảm dần</option></select></label></div><div id="chips" class="chips" aria-label="Bộ lọc đang áp dụng"></div><div id="cards" class="cards" aria-busy="true"><p class="state">Đang chuẩn bị những góc học dành cho bạn…</p></div></div>
+      </div>
+    </section>
+    <section class="closing wrap"><span aria-hidden="true">✳</span><div><h2>Không cần một nơi hoàn hảo.</h2><p>Chỉ cần một nơi phù hợp để bắt đầu.</p></div><a href="#results">Khám phá không gian <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="wrap"><a class="brand" href="#explore">studyspace<span aria-hidden="true">↗</span></a><p>Dự án cá nhân dành cho việc học lập trình.<br>Dữ liệu minh họa · Không cung cấp đặt chỗ.</p><span>MADE FOR FOCUSED DAYS.</span></footer>
+  <dialog id="detail" aria-labelledby="detail-title"><button id="close-detail" class="close-button" aria-label="Đóng chi tiết">×</button><div id="detail-body"></div></dialog>
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+</body></html>
