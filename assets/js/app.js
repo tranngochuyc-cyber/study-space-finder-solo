@@ -29,8 +29,10 @@ function syncControls() {
 function render() {
   $('#saved-count').textContent = spaces.filter(space => favorites.ids.has(space.id)).length;
   $('#results-title').textContent = state.savedOnly ? 'Những góc học bạn đã lưu' : 'Không gian dành cho bạn';
-  $('#favorites-link').toggleAttribute('aria-current', state.savedOnly);
-  $('#explore-link').toggleAttribute('aria-current', !state.savedOnly);
+  for (const [selector, current] of [['#favorites-link', state.savedOnly], ['#explore-link', !state.savedOnly]]) {
+    if (current) $(selector).setAttribute('aria-current', 'page');
+    else $(selector).removeAttribute('aria-current');
+  }
   const selected = selectSpaces(spaces, state, favorites.ids);
   $('#result-count').innerHTML = `<strong>${selected.length}</strong> không gian phù hợp`;
   $('#cards').innerHTML = selected.length ? selected.map(space => cardHTML(space, favorites.ids.has(space.id))).join('') : `<div class="state"><span aria-hidden="true">⌕</span><h3>${state.savedOnly ? 'Chưa có góc học phù hợp đã lưu' : 'Chưa tìm thấy góc học phù hợp'}</h3><p>${state.savedOnly ? 'Nhấn trái tim trên địa điểm bạn thích, hoặc thay đổi bộ lọc.' : 'Thử một từ khóa khác hoặc bớt điều kiện lọc nhé.'}</p><button class="primary" data-reset>Khám phá tất cả không gian</button></div>`;
@@ -96,6 +98,15 @@ document.addEventListener('click', event => {
   if (button.dataset.amenityRemove) { state.amenities = state.amenities.filter(item => item !== button.dataset.amenityRemove); syncControls(); render(); $('#clear').focus(); }
 });
 $('#close-detail').addEventListener('click', () => dialog.close());
+// Giữ Tab trong hộp thoại, kể cả khi trình duyệt muốn chuyển lên thanh địa chỉ.
+dialog.addEventListener('keydown', event => {
+  if (event.key !== 'Tab') return;
+  const controls = [...dialog.querySelectorAll('button:not([disabled]), a[href], input, select, [tabindex="0"]')];
+  const first = controls[0];
+  const last = controls.at(-1);
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+});
 dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
 dialog.addEventListener('close', () => {
   const id = activeSpace?.id;
@@ -109,7 +120,7 @@ export function validateSpaces(data) {
   if (!Array.isArray(data)) throw new Error('Dữ liệu không phải danh sách');
   const ids = new Set();
   for (const item of data) {
-    if (!item || !/^[a-z0-9-]+$/.test(item.id) || ids.has(item.id)
+    if (!item || typeof item.id !== 'string' || !/^[a-z0-9-]+$/.test(item.id) || ids.has(item.id)
       || !['name', 'district', 'address', 'description', 'hours', 'unit'].every(key => typeof item[key] === 'string' && item[key].trim())
       || !Object.hasOwn(types, item.type) || ![1, 2, 3].includes(item.quiet)
       || !Number.isFinite(item.price) || item.price < 0 || !Array.isArray(item.amenities)

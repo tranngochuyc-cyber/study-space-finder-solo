@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { normalize, selectSpaces } from '../assets/js/search.js';
+import { createFavorites } from '../assets/js/features/favorites.js';
+const data = JSON.parse(readFileSync(new URL('../data/spaces.json', import.meta.url)));
+const base = { query:'',district:'',type:'',price:'',quiet:'',amenities:[],savedOnly:false,sort:'name' };
+test('18 unique demo spaces, diverse districts and types',()=>{assert.equal(data.length,18);assert.equal(new Set(data.map(s=>s.id)).size,18);assert.ok(data.every(s=>s.demo));assert.equal(new Set(data.map(s=>s.type)).size,3);assert.ok(new Set(data.map(s=>s.district)).size>=6);});
+test('Vietnamese accents, Đ, case and whitespace',()=>{assert.equal(normalize('  ĐẶNG Thị  '),'dang thi');assert.equal(selectSpaces(data,{...base,query:'an nhien'},new Set())[0].id,'space-01');assert.equal(selectSpaces(data,{...base,query:'mam xanh'},new Set())[0].id,'space-01');assert.equal(selectSpaces(data,{...base,query:'thu duc'},new Set()).length,2);});
+test('AND across groups and amenities',()=>{const result=selectSpaces(data,{...base,type:'cafe',price:'low',quiet:'3',amenities:['wifi','ac']},new Set());assert.deepEqual(result.map(s=>s.id),['space-01']);});
+test('price boundaries include 50,000 and exclude it from mid',()=>{assert.ok(selectSpaces(data,{...base,price:'low'},new Set()).some(s=>s.price===50000));assert.ok(selectSpaces(data,{...base,price:'mid'},new Set()).every(s=>s.price>50000&&s.price<=100000));assert.equal(selectSpaces(data,{...base,price:'free'},new Set()).length,3);});
+test('sort both directions without changing input',()=>{const before=data.map(s=>s.id);for(const sort of ['price-asc','price-desc']){const result=selectSpaces(data,{...base,sort},new Set());assert.ok(result.every((s,i)=>i===0||(sort==='price-asc'?s.price>=result[i-1].price:s.price<=result[i-1].price)));}assert.deepEqual(data.map(s=>s.id),before);});
+test('favorites combine with other filters and empty results',()=>{assert.equal(selectSpaces(data,{...base,savedOnly:true},new Set(['space-01'])).length,1);assert.equal(selectSpaces(data,{...base,savedOnly:true,type:'library'},new Set(['space-01'])).length,0);assert.equal(selectSpaces(data,{...base,query:'notexistingxyz'},new Set()).length,0);});
+test('favorite storage persists and recovers malformed values',()=>{let value='[]';const storage={getItem:()=>value,setItem:(_,v)=>{value=v;}};const model=createFavorites(()=>{},()=>storage);model.toggle('space-01');assert.ok(createFavorites(()=>{},()=>storage).ids.has('space-01'));model.toggle('space-01');assert.equal(model.ids.size,0);let warnings=0;value='{}';assert.equal(createFavorites(()=>warnings++,()=>storage).ids.size,0);assert.equal(warnings,1);});
+test('storage unavailable still works in memory',()=>{let warnings=0;const model=createFavorites(()=>warnings++,()=>{throw new Error('blocked');});assert.equal(model.toggle('space-01'),true);assert.ok(model.ids.has('space-01'));assert.equal(warnings,2);});
