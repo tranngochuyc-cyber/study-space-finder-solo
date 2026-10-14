@@ -1,0 +1,14 @@
+export const types = { cafe: 'Cà phê', library: 'Thư viện', coworking: 'Coworking' };
+export const amenities = { wifi: 'Wi-Fi', outlets: 'Ổ điện', ac: 'Điều hòa', parking: 'Gửi xe' };
+export const quiet = { 1: 'Sôi nổi', 2: 'Vừa phải', 3: 'Rất yên tĩnh' };
+export const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+export const money = value => value === 0 ? 'Miễn phí' : `${value.toLocaleString('vi-VN')}đ`;
+export const imagePath = space => `assets/images/${space.type}.svg`;
+
+export function cardHTML(space, saved) {
+  return `<article class="card"><div class="card-visual"><img src="${imagePath(space)}" alt="Minh họa không gian ${types[space.type].toLowerCase()}" width="480" height="310" loading="lazy"><span class="type-label">${types[space.type]} · DEMO</span><button class="favorite" data-favorite="${space.id}" aria-pressed="${saved}" aria-label="${saved ? 'Bỏ lưu' : 'Lưu'} ${escapeHTML(space.name)}">${saved ? '♥' : '♡'}</button></div><div class="card-content"><p class="location">${escapeHTML(space.district)} · TP.HCM</p><h3>${escapeHTML(space.name)}</h3><span class="quiet-tag">◌ ${quiet[space.quiet]}</span><div class="amenities">${space.amenities.map(item => `<span>${amenities[item]}</span>`).join('')}</div><div class="card-bottom"><span class="price">${money(space.price)} <small>${space.price ? '/ ' + escapeHTML(space.unit) : ''}</small></span><button class="details-button" data-detail="${space.id}" aria-label="Xem chi tiết ${escapeHTML(space.name)}">Chi tiết ↗</button></div></div></article>`;
+}
+
+export function detailHTML(space, saved) {
+  return `<img class="detail-image" src="${imagePath(space)}" alt="Hình minh họa, không phải ảnh địa điểm thực tế" width="640" height="320"><div class="detail-content"><p class="eyebrow">${types[space.type]} · ĐỊA ĐIỂM HƯ CẤU</p><h2 id="detail-title">${escapeHTML(space.name)}</h2><p>${escapeHTML(space.description)}</p><dl><dt>Địa chỉ mẫu</dt><dd>${escapeHTML(space.address)}, ${escapeHTML(space.district)}, TP.HCM</dd><dt>Giá tham khảo</dt><dd>${money(space.price)}${space.price ? ' / ' + escapeHTML(space.unit) : ''}</dd><dt>Giờ demo</dt><dd>${escapeHTML(space.hours)}</dd><dt>Không gian</dt><dd>${quiet[space.quiet]}</dd></dl><div class="detail-amenities">${Object.entries(amenities).map(([key, label]) => `<span>${space.amenities.includes(key) ? '✓' : '−'} ${label}${space.amenities.includes(key) ? '' : ' · không có'}</span>`).join('')}</div><p class="demo-note">Dữ liệu phục vụ học lập trình. Không xác nhận giờ mở cửa, giá thực tế hoặc chỗ trống. Không cung cấp đặt chỗ.</p><button class="primary" data-favorite="${space.id}" aria-pressed="${saved}">${saved ? '♥ Đã lưu — Bỏ lưu địa điểm' : '♡ Lưu địa điểm'}</button></div>`;
+}

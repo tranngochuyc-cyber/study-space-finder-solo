@@ -1,0 +1,328 @@
+[
+  {
+    "id": "space-01",
+    "name": "An Nhiên Reading Café",
+    "district": "Quận 1",
+    "type": "cafe",
+    "price": 45000,
+    "quiet": 3,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac"
+    ],
+    "address": "12 Đường Mầm Xanh",
+    "description": "Góc đọc nhỏ với bàn đơn bên cửa sổ, phù hợp đọc sách và ôn bài.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-02",
+    "name": "Bên Hiên Coffee",
+    "district": "Quận 3",
+    "type": "cafe",
+    "price": 35000,
+    "quiet": 2,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "parking"
+    ],
+    "address": "24 Đường Nắng Nhẹ",
+    "description": "Một mái hiên xanh với bàn dài, phù hợp trao đổi bài tập nhẹ nhàng.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-03",
+    "name": "Chạm Workspace",
+    "district": "Bình Thạnh",
+    "type": "coworking",
+    "price": 120000,
+    "quiet": 2,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac",
+      "parking"
+    ],
+    "address": "8 Đường Ý Tưởng",
+    "description": "Bàn làm việc rộng và khu thảo luận chung dành cho buổi học nhóm.",
+    "unit": "ngày",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-04",
+    "name": "Dấu Phẩy Library",
+    "district": "Quận 1",
+    "type": "library",
+    "price": 0,
+    "quiet": 3,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac"
+    ],
+    "address": "30 Đường Trang Sách",
+    "description": "Phòng đọc giữ yên lặng, có bàn cá nhân cho những buổi tập trung dài.",
+    "unit": "ngày",
+    "hours": "08:00–18:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-05",
+    "name": "Êm Study Corner",
+    "district": "Phú Nhuận",
+    "type": "cafe",
+    "price": 55000,
+    "quiet": 3,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac"
+    ],
+    "address": "16 Đường Bình Yên",
+    "description": "Không gian nhỏ với ánh sáng ấm và khu bàn đơn tách biệt.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-06",
+    "name": "Gác Mây Coffee",
+    "district": "Thủ Đức",
+    "type": "cafe",
+    "price": 30000,
+    "quiet": 2,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "parking"
+    ],
+    "address": "7 Đường Mây Trắng",
+    "description": "Gác lửng thoáng với bảng ghi chú để cùng bạn lên kế hoạch học tập.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-07",
+    "name": "Hiên Sách",
+    "district": "Quận 5",
+    "type": "library",
+    "price": 0,
+    "quiet": 3,
+    "amenities": [
+      "wifi",
+      "parking"
+    ],
+    "address": "42 Đường Bút Mực",
+    "description": "Góc đọc mở với kệ sách tham khảo và khu vực không sử dụng điện thoại.",
+    "unit": "ngày",
+    "hours": "08:00–18:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-08",
+    "name": "Kết Nối Hub",
+    "district": "Quận 7",
+    "type": "coworking",
+    "price": 150000,
+    "quiet": 1,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac",
+      "parking"
+    ],
+    "address": "21 Đường Sáng Tạo",
+    "description": "Bàn chung cho hoạt động cộng tác, phù hợp luyện thuyết trình và làm đồ án.",
+    "unit": "ngày",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-09",
+    "name": "Lá Non Café",
+    "district": "Tân Bình",
+    "type": "cafe",
+    "price": 40000,
+    "quiet": 2,
+    "amenities": [
+      "wifi",
+      "parking"
+    ],
+    "address": "18 Đường Lá Mới",
+    "description": "Sân nhỏ có cây xanh, phù hợp ghi chép và những buổi học thư giãn.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-10",
+    "name": "Mộc Study House",
+    "district": "Quận 3",
+    "type": "coworking",
+    "price": 90000,
+    "quiet": 3,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac"
+    ],
+    "address": "9 Đường Gỗ Nhỏ",
+    "description": "Khu bàn cá nhân với nội quy giữ yên lặng, dành cho công việc cần tập trung.",
+    "unit": "ngày",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-11",
+    "name": "Nắng Ban Mai",
+    "district": "Bình Thạnh",
+    "type": "cafe",
+    "price": 50000,
+    "quiet": 1,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac",
+      "parking"
+    ],
+    "address": "33 Đường Bình Minh",
+    "description": "Không gian trò chuyện cởi mở và bàn nhóm, hợp cho brainstorm cùng bạn bè.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-12",
+    "name": "Ô Cửa Library",
+    "district": "Thủ Đức",
+    "type": "library",
+    "price": 10000,
+    "quiet": 3,
+    "amenities": [
+      "outlets",
+      "ac",
+      "parking"
+    ],
+    "address": "6 Đường Tri Thức",
+    "description": "Phòng đọc có cửa sổ lớn; không có Wi-Fi, phù hợp đọc tài liệu ngoại tuyến.",
+    "unit": "ngày",
+    "hours": "08:00–18:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-13",
+    "name": "Phố Nhỏ Coffee",
+    "district": "Quận 10",
+    "type": "cafe",
+    "price": 25000,
+    "quiet": 1,
+    "amenities": [
+      "wifi",
+      "outlets"
+    ],
+    "address": "45 Đường Góc Phố",
+    "description": "Bàn đôi và chỗ ngồi linh hoạt dành cho buổi trao đổi bài ngắn.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-14",
+    "name": "Rễ Workspace",
+    "district": "Phú Nhuận",
+    "type": "coworking",
+    "price": 110000,
+    "quiet": 2,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac",
+      "parking"
+    ],
+    "address": "27 Đường Ươm Mầm",
+    "description": "Bàn rộng để trải tài liệu, không gian cộng tác cho nhóm sinh viên.",
+    "unit": "ngày",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-15",
+    "name": "Sách & Trà",
+    "district": "Quận 5",
+    "type": "cafe",
+    "price": 60000,
+    "quiet": 3,
+    "amenities": [
+      "wifi",
+      "ac"
+    ],
+    "address": "13 Đường Trà Xanh",
+    "description": "Một góc trà yên tĩnh cho đọc sách; không có ổ điện tại bàn.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-16",
+    "name": "Thềm Tri Thức",
+    "district": "Tân Bình",
+    "type": "library",
+    "price": 0,
+    "quiet": 3,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "parking"
+    ],
+    "address": "22 Đường Học Hỏi",
+    "description": "Khu tự học giản dị với bàn dài và ánh sáng tự nhiên, không có điều hòa.",
+    "unit": "ngày",
+    "hours": "08:00–18:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-17",
+    "name": "Ươm Ideas Studio",
+    "district": "Quận 7",
+    "type": "coworking",
+    "price": 180000,
+    "quiet": 2,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac",
+      "parking"
+    ],
+    "address": "5 Đường Khởi Đầu",
+    "description": "Không gian làm đồ án có bàn nhóm lớn và nhiều vị trí cắm máy tính.",
+    "unit": "ngày",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  },
+  {
+    "id": "space-18",
+    "name": "Vòm Xanh Café",
+    "district": "Quận 10",
+    "type": "cafe",
+    "price": 70000,
+    "quiet": 2,
+    "amenities": [
+      "wifi",
+      "outlets",
+      "ac",
+      "parking"
+    ],
+    "address": "19 Đường Tán Lá",
+    "description": "Góc học dưới vòm cây minh họa, với bàn đơn và bàn đôi cho nhiều cách học.",
+    "unit": "đồ uống",
+    "hours": "07:30–22:00 (minh họa)",
+    "demo": true
+  }
+]
