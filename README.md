@@ -1,5 +1,13 @@
 # Study Space Finder — Solo
 
+## 🌐 Website trực tuyến
+
+### [👉 Mở Study Space Finder trên GitHub Pages](https://tranngochuyc-cyber.github.io/study-space-finder-solo/)
+
+Truy cập trực tiếp trên máy tính hoặc điện thoại, không cần cài đặt. Website đã được triển khai trên GitHub Pages; kiểm tra ngày 15/10/2026 trả về HTTP 200.
+
+Bạn có thể tìm kiếm, lọc địa điểm, xem chi tiết và lưu yêu thích ngay trên website. Dữ liệu địa điểm là minh họa cho dự án học tập.
+
 Website tìm góc học dành cho sinh viên, viết bằng HTML5, CSS3 và JavaScript ES Modules. Không framework, không backend, không cần build. **18 địa điểm đều hư cấu**, địa chỉ/giá/giờ chỉ minh họa. Khu vực dùng tên quen thuộc để học lọc dữ liệu, không phải danh mục hành chính hiện hành.
 
 ## Chạy trên máy
