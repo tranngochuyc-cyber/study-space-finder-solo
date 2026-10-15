@@ -12,3 +12,6 @@
 | Shift+Tab không ở trong dialog | Native dialog có thể chuyển focus ra browser chrome | Thêm handler Tab/Shift+Tab wrap về nút cuối/đầu trong dialog | Test keyboard trap; sau sửa PASS |
 
 Network abort, JSON sai và localStorage bị chặn trong bộ kiểm thử là lỗi cố ý mô phỏng để xác nhận phục hồi, không phải lỗi triển khai còn tồn tại. Sau các sửa trên, 14 nhóm kiểm thử browser đạt và không thu được pageerror. Chưa có kết quả Lighthouse hoặc kiểm thử screen reader.
+
+15/10/2026: Cổng 4173 bị chiếm và không truy cập được. Thêm PORT tùy chọn cho server, chạy ở 4187; kiểm thử thành công. Ảnh card trước đó bị thuộc tính height HTML giữ chiều cao cố định; thêm CSS height:auto khắc phục.
+

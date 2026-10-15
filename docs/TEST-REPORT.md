@@ -57,3 +57,7 @@ Chạy thực tế: `node tests/browser.cjs` với PLAYWRIGHT_MODULE trỏ modul
 | Nghiên cứu usability với sinh viên | NOT RUN | Chưa có người tham gia; không tự tạo số liệu |
 
 GitHub Pages public: **PASS**, đã truy cập thực tế và chạy đủ 14 nhóm kiểm thử sau triển khai. Các lần test thất bại ban đầu được giữ trong ERROR-LOG. PASS phản ánh lần chạy sau khi sửa, không che giấu lỗi ban đầu.
+
+## Rà soát ngày 15/10/2026
+Đã sửa chiều cao ảnh card bằng height:auto để tỷ lệ ảnh đáp ứng đúng desktop/tablet/mobile. Chạy lại 8/8 unit tests và 14/14 nhóm browser trên local cổng 4187: PASS, không pageerror. Lighthouse vẫn chưa đo.
+

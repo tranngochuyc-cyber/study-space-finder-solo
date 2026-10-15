@@ -86,3 +86,13 @@ Lưu báo cáo triển khai cuối cùng bằng commit `docs: record verified Gi
 ## Chỉ đề xuất, chưa chạy
 
 `gh auth login`, cấu hình danh tính lâu dài và `git remote add` thủ công trong README là hướng dẫn cho bản sao của người dùng; không chạy lại các bước đó cho repo hiện tại. Chưa chạy Lighthouse. Chưa cài framework hoặc thư viện runtime nào vào sản phẩm.
+
+## Ngày 15/10/2026 — hoàn thiện
+Đã chạy `git status --short`, `npm test`, `node scripts/serve.cjs` (cổng 4173 bị chiếm).
+Đã chạy `$env:PORT='4187'; node scripts/serve.cjs` và bộ kiểm thử:
+```powershell
+$env:PLAYWRIGHT_MODULE='C:/Users/HP-VT/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'
+$env:BASE_URL='http://127.0.0.1:4187/'
+node tests/browser.cjs
+```
+Kết quả: 8 unit và 14 nhóm browser đạt. Đã xem ảnh tablet yêu thích sau sửa tỷ lệ ảnh.

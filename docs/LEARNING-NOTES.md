@@ -54,3 +54,7 @@ Sự kiện close xảy ra sau hành động đóng, nên kiểm thử phải ch
 2. Thêm lọc quận nhiều lựa chọn với OR, viết test có hai quận.
 3. Tự giải thích vì sao Set cần chuyển sang array trước JSON.stringify.
 4. Thêm query vào URLSearchParams và kiểm tra refresh/Back, tránh lưu state bằng hai nguồn không đồng bộ.
+
+## Hoàn thiện ảnh responsive
+Thuộc tính width/height HTML dự trữ kích thước ảnh. Khi đặt width:100%, cần height:auto để chiều cao thay đổi cùng chiều rộng và aspect-ratio có hiệu lực. Server local nhận biến PORT để tránh xung đột cổng mà không tác động website trên Pages.
+
